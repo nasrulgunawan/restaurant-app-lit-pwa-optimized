@@ -39,7 +39,9 @@
   },
   "dependencies": {
     "ellipsed": "^1.5.0",
+    "idb": "^5.0.4",
     "lit-element": "^2.5.1",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.5",
+    "serviceworker-webpack-plugin": "^1.0.1"
   }
 }
