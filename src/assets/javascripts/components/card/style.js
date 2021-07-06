@@ -45,9 +45,9 @@ export const cardStyle = css`
 
   .card-footer {
     display: flex;
-    padding: 1rem;
+    padding: 1rem 1rem .5rem;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .card-footer img {
@@ -66,6 +66,11 @@ export const cardStyle = css`
     align-items: center;
   }
 
+  .verified-restaurant .icon {
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
   .rating .icon {
     margin-right: 0.25rem;
     color: var(--primary-color);
@@ -74,8 +79,21 @@ export const cardStyle = css`
   .icon {
     width: 1.5rem;
     height: 1.5rem;
-    background-color: #fff;
+  }
+
+  .icon-favorite {
+    color: #CD113B;
+  }
+  
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    padding: .5rem;
     border-radius: 50%;
+  }
+  
+  .icon-container:hover {
+    background-color: #eee;
   }
 
   .verified-restaurant {

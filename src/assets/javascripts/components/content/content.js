@@ -1,5 +1,4 @@
 import { LitElement, html } from 'lit-element';
-import { restaurants } from '../../../../data/restaurants';
 import { mainStyle } from './style';
 import { sharedStyle } from '../../shared/style';
 import CONFIG from '../../globals/config';
@@ -10,7 +9,7 @@ class ContentComponent extends LitElement {
     return {
       title: { type: String },
       subtitle: { type: String },
-      data: { type: Array },
+      restaurants: { type: Array },
     };
   }
 
@@ -25,11 +24,11 @@ class ContentComponent extends LitElement {
     super();
     this.title = 'Daftar Restaurant';
     this.subtitle = 'Nikmati kebersamaan';
-    this.data = [];
+    this.restaurants = [];
   }
 
   render() {
-    if (this.data.length > 0) {
+    if (this.restaurants.length > 0) {
       return html`
         <div class="container">
           <div class="content-header">
@@ -38,7 +37,7 @@ class ContentComponent extends LitElement {
           </div>
   
           <div class="cards">
-            ${this.data.map(({
+            ${this.restaurants.map(({
                 id, city, name, description, rating, distance, pictureId,
               }) => {
                 return html`
@@ -50,7 +49,6 @@ class ContentComponent extends LitElement {
                       <p class="card-description">${description}</p>
                     </div>
                     <span slot="rating">${rating}</span>
-                    <span slot="distance" class="text-small">${distance} km</span>
                   </x-card>
                 `;
             })}
