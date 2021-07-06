@@ -29,6 +29,8 @@ class ContentComponent extends LitElement {
 
   render() {
     if (this.restaurants.length > 0) {
+      this._displayHero();
+
       return html`
         <div class="container">
           <div class="content-header">
@@ -46,7 +48,8 @@ class ContentComponent extends LitElement {
         </div>
       `;
     } else {
-      this._hideHero();
+      this._displayHero('none');
+      
       return html`
         <div class="empty-data">
           <img src="${emptyImage}" alt="Empty Data Image">
@@ -56,8 +59,8 @@ class ContentComponent extends LitElement {
     }
   }
 
-  _hideHero() {
-    document.querySelector('x-hero').style.display = 'none';
+  _displayHero(display = 'block') {
+    document.querySelector('x-hero').style.display = display;
   }
 }
 

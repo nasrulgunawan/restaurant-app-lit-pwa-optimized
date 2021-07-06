@@ -46,7 +46,7 @@ class CardComponent extends LitElement {
     this._getResturant(id);
 
     return html`
-      <a class="card" href="#">
+      <a class="card" href="#/detail/${id}">
         <div class="card-img">
           <img src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="Restaurant ${name}" loading="lazy">
           <div class="verified-restaurant" title="Verified Restaurant">

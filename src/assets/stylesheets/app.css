@@ -21,6 +21,11 @@ body {
   color: var(--text-color);
 }
 
+.loading-text {
+  text-align: center;
+  padding: 2rem;
+}
+
 .skip-link {
   position: absolute;
   top: -50px;
