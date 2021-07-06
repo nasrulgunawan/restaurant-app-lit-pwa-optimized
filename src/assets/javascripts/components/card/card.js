@@ -1,6 +1,8 @@
 
 import { LitElement, html } from 'lit-element';
 import CONFIG from '../../globals/config';
+import favoriteRestaurantIdb from '../../repository/favorite-restaurant-idb';
+import setFavoriteData from '../../utils/set-favorite-data';
 import { cardStyle } from './style';
 
 
@@ -40,7 +42,8 @@ class CardComponent extends LitElement {
   }
 
   render() {
-    const { city, name, description, rating, pictureId } = this.restaurant;
+    const { id, city, name, description, rating, pictureId } = this.restaurant;
+    this._getResturant(id);
 
     return html`
       <a class="card" href="#">
@@ -63,7 +66,7 @@ class CardComponent extends LitElement {
             <span>${rating}</span>
           </div>
           <div class="icon-container"
-            @click="${this._setFavoriteData}"
+            @click="${this._setFavorite}"
             data-favorite="false">
               ${this.isFavorite ? favoriteIcon() : unfavoriteIcon()}
           </div>
@@ -72,11 +75,17 @@ class CardComponent extends LitElement {
     `;
   }
 
-  _setFavoriteData(e) {
+  async _getResturant(id) {
+    const restaurant = await favoriteRestaurantIdb.getRestaurant(id);
+    this.isFavorite = !!restaurant;
+  }
+
+  _setFavorite(e) {
     e.preventDefault();
     e.stopPropagation();
     this.isFavorite = !this.isFavorite;
-    console.log(this.restaurant);
+
+    setFavoriteData.call({ restaurant: this.restaurant });
   }
 }
 
