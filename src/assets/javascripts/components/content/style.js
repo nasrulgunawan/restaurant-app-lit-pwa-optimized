@@ -46,4 +46,18 @@ export const mainStyle = css`
       grid-template-columns: repeat(6, 1fr);
     }
   }
+
+  .empty-data {
+    text-align: center;
+    margin: 4rem 0;
+  }
+
+  .empty-data img {
+    width: 500px;
+    margin-bottom: 2rem;
+  }
+
+  .empty-data p {
+    font-size: 1.25rem;
+  }
 `;

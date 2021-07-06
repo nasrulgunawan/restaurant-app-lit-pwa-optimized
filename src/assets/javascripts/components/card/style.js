@@ -39,7 +39,6 @@ export const cardStyle = css`
   .card-text {
     position: relative;
     flex-grow: 1;
-    padding: .5rem 0;
   }
 
   .text-small {
@@ -52,26 +51,19 @@ export const cardStyle = css`
   .card-title {
     font-weight: 500;
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     margin-top: 0.15rem;
-  }
-
-  .card-description {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
   }
 
   .card-img {
     position: relative;
     flex: 1 1 auto;
     border-radius: .25rem;
+    height: 200px;
   }
 
   .card-body {
-    flex: 0 1 200px;
+    flex: 0 1;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -80,7 +72,7 @@ export const cardStyle = css`
 
   .card-footer {
     display: flex;
-    padding: 1rem 1rem .5rem;
+    padding: 0 1rem .5rem;
     justify-content: space-between;
     align-items: center;
   }

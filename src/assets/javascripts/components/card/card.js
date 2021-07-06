@@ -57,7 +57,6 @@ class CardComponent extends LitElement {
           <div class="card-text">
             <p class="text-small">${city}</p>
             <p class="card-title">${name}</p>
-            <p class="card-description">${description}</p>
           </div>
         </div>
         <div class="card-footer">

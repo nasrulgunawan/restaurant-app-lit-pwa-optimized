@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit-element';
 import { mainStyle } from './style';
 import { sharedStyle } from '../../shared/style';
-import CONFIG from '../../globals/config';
 import '../card/card';
+import emptyImage from './empty-data.svg';
 
 class ContentComponent extends LitElement {
   static get properties() {
@@ -38,14 +38,26 @@ class ContentComponent extends LitElement {
   
           <div class="cards">
             ${this.restaurants.map((restaurant) => {
-                return html`
-                  <x-card restaurant='${JSON.stringify(restaurant)}'></x-card>
-                `;
+              return html`
+                <x-card restaurant='${JSON.stringify(restaurant)}'></x-card>
+              `;
             })}
           </div>
         </div>
       `;
+    } else {
+      this._hideHero();
+      return html`
+        <div class="empty-data">
+          <img src="${emptyImage}" alt="Empty Data Image">
+          <p>Data tidak tersedia</p>
+        </div>;
+      `;
     }
+  }
+
+  _hideHero() {
+    document.querySelector('x-hero').style.display = 'none';
   }
 }
 
