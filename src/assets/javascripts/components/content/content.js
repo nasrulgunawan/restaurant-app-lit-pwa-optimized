@@ -37,19 +37,9 @@ class ContentComponent extends LitElement {
           </div>
   
           <div class="cards">
-            ${this.restaurants.map(({
-                id, city, name, description, rating, distance, pictureId,
-              }) => {
+            ${this.restaurants.map((restaurant) => {
                 return html`
-                  <x-card>
-                    <img slot="img" src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="Restaurant ${name}" loading="lazy">
-                    <div slot="text" class="card-text">
-                      <p class="text-small">${city}</p>
-                      <p class="card-title">${name}</p>
-                      <p class="card-description">${description}</p>
-                    </div>
-                    <span slot="rating">${rating}</span>
-                  </x-card>
+                  <x-card restaurant='${JSON.stringify(restaurant)}'></x-card>
                 `;
             })}
           </div>

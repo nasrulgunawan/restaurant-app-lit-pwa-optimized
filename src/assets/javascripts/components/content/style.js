@@ -11,39 +11,6 @@ export const mainStyle = css`
     gap: 1rem;
   }
 
-  img {
-    width: 100%;
-    height: 200px;
-    border-radius: .5rem .5rem 0 0;
-    object-fit: cover;
-  }
-
-  .card-text {
-    position: relative;
-    flex-grow: 1;
-    padding: .5rem 0;
-  }
-
-  .text-small {
-    font-weight: 300;
-    font-size: .95rem;
-    color: #444;
-  }
-
-  .card-title {
-    font-weight: 500;
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-
-  .card-description {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-  }
-
   @media (max-width: 575.98px) {
     .cards {
       grid-template-columns: 1fr;
