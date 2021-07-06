@@ -46,19 +46,21 @@ export const cardStyle = css`
     font-weight: 300;
     font-size: .95rem;
     color: #444;
+    margin: 0;
   }
 
   .card-title {
     font-weight: 500;
     font-size: 1.25rem;
     margin-bottom: 1rem;
+    margin-top: 0.15rem;
   }
 
   .card-description {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
   }
 

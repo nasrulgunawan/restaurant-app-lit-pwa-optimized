@@ -1,10 +1,10 @@
 import favoriteRestaurantIdb from '../../repository/favorite-restaurant-idb';
 
-const Like = {
+const favorites = {
   async render() {
     const restaurants = await favoriteRestaurantIdb.getAllRestaurants();
-    return `<x-content data='${JSON.stringify(restaurants)}'></x-content>`
+    return `<x-content restaurants='${JSON.stringify(restaurants)}'></x-content>`
   },
 };
 
-export default Like;
+export default favorites;
