@@ -1,14 +1,16 @@
 import { LitElement, html } from 'lit-element';
-import { RESTAURANTS } from '../../../../data/restaurants';
-import '../card/card';
+import { restaurants } from '../../../../data/restaurants';
 import { mainStyle } from './style';
 import { sharedStyle } from '../../shared/style';
+import CONFIG from '../../globals/config';
+import '../card/card';
 
 class ContentComponent extends LitElement {
   static get properties() {
     return {
-      title: {type: String},
-      subtitle: {type: String},
+      title: { type: String },
+      subtitle: { type: String },
+      data: { type: Array },
     };
   }
 
@@ -23,24 +25,25 @@ class ContentComponent extends LitElement {
     super();
     this.title = 'Daftar Restaurant';
     this.subtitle = 'Nikmati kebersamaan';
+    this.data = [];
   }
 
   render() {
-    return html`
-      <main>
+    if (this.data.length > 0) {
+      return html`
         <div class="container">
           <div class="content-header">
             <h1>${this.title}</h1>
             <p>${this.subtitle}</p>
           </div>
-
+  
           <div class="cards">
-            ${RESTAURANTS.map(({
+            ${this.data.map(({
                 id, city, name, description, rating, distance, pictureId,
               }) => {
                 return html`
                   <x-card>
-                    <img slot="img" src="${pictureId}" alt="Restaurant ${name}" loading="lazy">
+                    <img slot="img" src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="Restaurant ${name}" loading="lazy">
                     <div slot="text" class="card-text">
                       <p class="text-small">${city}</p>
                       <p class="card-title">${name}</p>
@@ -53,8 +56,8 @@ class ContentComponent extends LitElement {
             })}
           </div>
         </div>
-      </main>
-    `;
+      `;
+    }
   }
 }
 

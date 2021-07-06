@@ -5,7 +5,7 @@ import { footerStyle } from './style';
 class FooterComponent extends LitElement {
   static get properties() {
     return {
-      content: {type: String},
+      content: { type: String },
     };
   }
 

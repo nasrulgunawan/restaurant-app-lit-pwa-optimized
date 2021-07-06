@@ -24,7 +24,7 @@ class NavbarComponent extends LitElement {
   render() {
     return html`
       <nav class="navbar">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <img alt="Mamamyu Logo" width="75%" src="${logo}">
         </a>
         <button class="navbar-toggler"
@@ -37,7 +37,7 @@ class NavbarComponent extends LitElement {
               <a href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a href="#">Favorite</a>
+              <a href="#/favorites">Favorites</a>
             </li>
             <li class="nav-item">
               <a href="https://github.com/nasrulgunawan" target="_blank" rel="noopener">About Us</a>
