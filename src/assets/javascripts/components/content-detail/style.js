@@ -15,8 +15,32 @@ export const detailStyle = css`
     border-radius: 0.5rem;
   }
 
-  .detail-page > .card-img > img {
-    width: 300px;
+  .card-img {
+    position: relative;
+  }
+
+  .card-img > img {
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  .card-img .rating {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    display: flex;
+    background-color: #fff;
+    padding: .15rem .5rem;
+    border-radius: 1rem;
+  }
+
+  .rating .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 0.25rem;
   }
 
   .card-text {
@@ -33,7 +57,6 @@ export const detailStyle = css`
 
   .header-text {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
   }
@@ -73,5 +96,7 @@ export const detailStyle = css`
   .divider {
     border: 1px solid #f0f2f4;
     height: 80px;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 `;
