@@ -1,4 +1,5 @@
 import favoriteRestaurantIdb from '../../repository/favorite-restaurant-idb';
+import '../../components/content/content';
 
 const favorites = {
   async render() {
