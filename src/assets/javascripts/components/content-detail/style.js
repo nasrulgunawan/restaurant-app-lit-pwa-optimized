@@ -67,6 +67,7 @@ export const detailStyle = css`
     background-color: #eee;
     padding: 0.25rem 1rem;
     font-size: .85rem;
+    margin-right: 0.15rem;
   }
 
   .address {
@@ -98,5 +99,61 @@ export const detailStyle = css`
     height: 80px;
     margin-left: 2rem;
     margin-right: 2rem;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+  
+  .list-menu {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    background-color: #eee;
+    padding: 1.5rem 1rem;
+    margin: .25rem 0 .25rem .5rem;
+    border-radius: .25rem;
+  }
+
+  .menu-header {
+    margin-top: 0;
+    margin-bottom: .5rem;
+  }
+
+  .mb-2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .avatar {
+    width: 3rem;
+    height: 3rem;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-right: .5rem;
+  }
+
+  .review-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .review-content {
+    padding: 0 1rem 1rem 3.5rem;
+  }
+
+  .review-content p {
+    margin-bottom: .25rem;
+  }
+  
+  .review-content span {
+    color: rgba(73, 87, 100, .5);
+    font-size: 12px;
   }
 `;

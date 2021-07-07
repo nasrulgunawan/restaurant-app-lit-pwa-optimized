@@ -80,6 +80,7 @@ export const navbarStyle = css`
       padding: 1rem 0 0;
       border-top: 1px solid rgba(0, 0, 0, .05);
       margin-top: 1rem;
+      margin-bottom: 0;
     }
   }
 
@@ -98,6 +99,7 @@ export const navbarStyle = css`
       padding: 1rem 0 0;
       border-top: 1px solid rgba(0, 0, 0, .05);
       margin-top: 1rem;
+      margin-bottom: 0;
     }
   }
   

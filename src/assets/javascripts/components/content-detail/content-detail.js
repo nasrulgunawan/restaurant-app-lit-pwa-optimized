@@ -57,7 +57,36 @@ class ContentDetailComponent extends LitElement {
             <p class="description">${description}</p>
           </div>
         </div>
-        <div class="card">
+
+        <div class="card flex-column">
+          <h2 class="menu-header">Daftar Makanan</h2>
+          <div class="list-menu mb-2">
+            ${menus.foods.map((food) => html`<div class="menu">${food.name}</div>` )}
+          </div>
+          <h2 class="menu-header">Daftar Minuman</h2>
+          <div class="list-menu">
+          ${menus.drinks.map((drink) => html`<div class="menu">${drink.name}</div>` )}
+          </div>
+        </div>
+
+        <div class="card flex-column">
+          <h2 class="menu-header">Review</h2>
+          <div class="list-review">
+            <div class="review">
+              ${customerReviews.map((review) =>
+                 html`
+                  <div class="review-name">
+                    <div class="avatar">${review.name.substring(0, 1)}</div>
+                    <span><strong>${review.name}</strong></span>
+                  </div>
+                  <div class="review-content">
+                    <p>${review.review}</p>
+                    <span>${review.date}</span>
+                  </div>
+                 `
+              )}
+            </div>
+          </div>
         </div>
       </div>
     `;
