@@ -25,7 +25,7 @@ class ContentDetailComponent extends LitElement {
     
     return html`
       <div class="container">
-        <div class="card">
+        <div class="card card-restaurant">
           <div class="card-img">
             <img src="${CONFIG.BASE_IMAGE_URL + pictureId}">
             <div class="rating">

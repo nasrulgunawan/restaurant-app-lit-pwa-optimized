@@ -149,11 +149,56 @@ export const detailStyle = css`
   }
 
   .review-content p {
-    margin-bottom: .25rem;
+    margin-bottom: .15rem;
   }
   
   .review-content span {
     color: rgba(73, 87, 100, .5);
     font-size: 12px;
+  }
+
+  @media (max-width: 575.98px) {
+    .card-restaurant {
+      flex-direction: column;
+    }
+
+    .card-img img {
+      width: 100%;
+    }
+
+    .card-text {
+      margin: 0.75rem;
+    }
+
+    .header-text{
+      justify-content: space-between;
+    }
+    
+    .divider {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .card-restaurant {
+      flex-direction: column;
+    }
+
+    .card-img img {
+      width: 100%;
+    }
+
+    .card-text {
+      margin: 0.75rem;
+    }
+
+    .header-text{
+      justify-content: space-between;
+    }
+    
+    .divider {
+      margin: 0;
+    }
   }
 `;
