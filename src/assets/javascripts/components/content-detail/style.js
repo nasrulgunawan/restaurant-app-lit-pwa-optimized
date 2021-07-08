@@ -68,6 +68,7 @@ export const detailStyle = css`
     padding: 0.25rem 1rem;
     font-size: .85rem;
     margin-right: 0.15rem;
+    margin-bottom: 0.25rem;
   }
 
   .address {
