@@ -65,7 +65,9 @@ class CardComponent extends LitElement {
             <span>${rating}</span>
           </div>
           <div class="icon-container"
+            tabindex="0"
             @click="${this._setFavorite}"
+            @keydown="${(e) => e.keyCode != 13 || this._setFavorite(e) }}"
             data-favorite="false">
               ${this.isFavorite ? favoriteIcon() : unfavoriteIcon()}
           </div>
