@@ -38,6 +38,7 @@ class ContentDetailComponent extends LitElement {
           <div class="card-text">
             <div class="header-text">
               <div class="information">
+                <p class="text-small">${city}</p>
                 <h2>${name}</h2>
                 <div class="categories">
                   ${categories.map((category) => html`<div class="label-category">${category.name}</div>`)}

@@ -51,6 +51,13 @@ export const detailStyle = css`
     margin: 0 0 .5rem;
   }
 
+  .text-small {
+    font-weight: 300;
+    font-size: .95rem;
+    color: #444;
+    margin: 0;
+  }
+
   p {
     margin: 0;
   }
@@ -97,7 +104,7 @@ export const detailStyle = css`
 
   .divider {
     border: 1px solid #f0f2f4;
-    height: 80px;
+    height: 120px;
     margin-left: 2rem;
     margin-right: 2rem;
   }
