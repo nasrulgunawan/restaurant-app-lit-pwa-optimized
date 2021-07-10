@@ -115,7 +115,7 @@ export const cardStyle = css`
   .icon-container {
     display: flex;
     justify-content: center;
-    padding: .5rem;
+    padding: .65rem;
     border-radius: 50%;
   }
   
