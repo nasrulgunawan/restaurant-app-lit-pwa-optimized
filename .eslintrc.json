@@ -1,19 +1,15 @@
 {
   "env": {
-    "browser": true,
-    "es2021": true,
-    "jasmine": true,
-    "node": true
+      "browser": true,
+      "es2021": true
   },
   "extends": [
-    "google",
-    "eslint:recommended",
-    "plugin:jasmine/recommended",
-    "plugin:@typescript-eslint/recommended"
+      "google"
   ],
   "parserOptions": {
-    "ecmaVersion": 12,
-    "sourceType": "module"
+      "ecmaVersion": 12,
+      "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+  }
 }

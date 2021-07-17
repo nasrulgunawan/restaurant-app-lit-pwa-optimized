@@ -1,9 +1,9 @@
 
-import { LitElement, html } from 'lit-element';
+import {LitElement, html} from 'lit-element';
 import CONFIG from '../../globals/config';
 import favoriteRestaurantIdb from '../../repository/favorite-restaurant-idb';
 import setFavoriteData from '../../utils/set-favorite-data';
-import { cardStyle } from './style';
+import {cardStyle} from './style';
 
 
 function favoriteIcon() {
@@ -42,7 +42,7 @@ class CardComponent extends LitElement {
   }
 
   render() {
-    const { id, city, name, description, rating, pictureId } = this.restaurant;
+    const { id, city, name, rating, pictureId } = this.restaurant;
     this._getResturant(id);
 
     return html`
