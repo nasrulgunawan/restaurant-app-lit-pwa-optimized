@@ -21,6 +21,7 @@ function unfavoriteIcon() {
     </>
   `;
 }
+
 class CardComponent extends LitElement {
   static get styles() {
     return [
@@ -30,8 +31,8 @@ class CardComponent extends LitElement {
 
   static get properties() {
     return {
-      restaurant: { type: Object },
-      isFavorite: { type: Boolean },
+      restaurant: {type: Object},
+      isFavorite: {type: Boolean},
     };
   }
 
@@ -42,7 +43,7 @@ class CardComponent extends LitElement {
   }
 
   render() {
-    const { id, city, name, rating, pictureId } = this.restaurant;
+    const {id, city, name, rating, pictureId} = this.restaurant;
     this._getResturant(id);
 
     return html`
@@ -86,7 +87,7 @@ class CardComponent extends LitElement {
     e.stopPropagation();
     this.isFavorite = !this.isFavorite;
 
-    setFavoriteData.call({ restaurant: this.restaurant });
+    setFavoriteData.call({restaurant: this.restaurant});
   }
 }
 

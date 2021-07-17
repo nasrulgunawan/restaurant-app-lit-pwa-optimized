@@ -1,18 +1,16 @@
 import favoriteRestaurantIdb from '../repository/favorite-restaurant-idb';
 
 const setFavoriteData = {
-  async call({ restaurant }) {
+  async call({restaurant}) {
     await this._saveData(restaurant);
   },
 
   async _saveData(restaurant) {
-    const { id } = restaurant;
-
-    console.log("ID", id);
+    const {id} = restaurant;
 
     if (await this._isRestaurantExist(id)) {
       this._delete(restaurant);
-    }else{
+    } else {
       this._update(restaurant);
     }
   },
@@ -25,7 +23,7 @@ const setFavoriteData = {
   _update(restaurant) {
     favoriteRestaurantIdb.putRestaurant(restaurant);
   },
-  
+
   _delete(restaurant) {
     favoriteRestaurantIdb.deleteRestaurant(restaurant.id);
   },

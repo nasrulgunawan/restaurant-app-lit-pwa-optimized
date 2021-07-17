@@ -4,7 +4,7 @@ import '../../components/content/content';
 const favorites = {
   async render() {
     const restaurants = await favoriteRestaurantIdb.getAllRestaurants();
-    return `<x-content restaurants='${JSON.stringify(restaurants)}'></x-content>`
+    return `<x-content restaurants='${JSON.stringify(restaurants)}'></x-content>`;
   },
 };
 

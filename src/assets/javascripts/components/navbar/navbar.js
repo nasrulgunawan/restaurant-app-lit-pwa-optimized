@@ -1,12 +1,13 @@
 
-import { LitElement, html } from 'lit-element';
-import { navbarStyle } from './style';
+
+import {LitElement, html} from 'lit-element';
+import {navbarStyle} from './style';
 import logo from './logo.svg';
 
 class NavbarComponent extends LitElement {
   static get properties() {
     return {
-      isOpen: { type: Boolean },
+      isOpen: {type: Boolean},
     };
   }
 
@@ -20,7 +21,7 @@ class NavbarComponent extends LitElement {
       navbarStyle,
     ];
   }
-  
+
   render() {
     return html`
       <nav class="navbar">

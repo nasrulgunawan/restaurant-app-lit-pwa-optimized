@@ -4,7 +4,7 @@ import '../../components/content/content';
 const home = {
   async render() {
     const restaurants = await RestaurantRepository.allRestaurants();
-    return `<x-content restaurants='${JSON.stringify(restaurants)}'></x-content>`
+    return `<x-content restaurants='${JSON.stringify(restaurants)}'></x-content>`;
   },
 };
 

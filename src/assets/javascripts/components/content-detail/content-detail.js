@@ -1,11 +1,29 @@
-import { LitElement, html } from 'lit-element';
-import { detailStyle } from './style';
+import {LitElement, html} from 'lit-element';
+import {detailStyle} from './style';
 import CONFIG from '../../globals/config';
+
+function renderCustomerReviews(customerReviews) {
+  return customerReviews.map((review) =>
+    html`
+      <div class="review-name">
+        <div class="avatar">${review.name.substring(0, 1)}</div>
+        <span><strong>${review.name}</strong></span>
+      </div>
+      <div class="review-content">
+        <p>${review.review}</p>
+        <span>${review.date}</span>
+      </div>
+  `);
+}
+
+function renderMenu(menus) {
+  return menus.map((menu) => html`<div class="menu">${menu.name}</div>`);
+}
 
 class ContentDetailComponent extends LitElement {
   static get properties() {
     return {
-      restaurant: { type: Object },
+      restaurant: {type: Object},
     };
   }
 
@@ -21,13 +39,24 @@ class ContentDetailComponent extends LitElement {
   }
 
   render() {
-    const { name, description, city, address, pictureId, categories, menus, rating, customerReviews } = this.restaurant;
-    
+    const {
+      name,
+      description,
+      city,
+      address,
+      pictureId,
+      categories,
+      menus,
+      rating,
+      customerReviews,
+    } = this.restaurant;
+
     return html`
       <div class="container">
         <div class="card card-restaurant">
           <div class="card-img">
-            <img src="${CONFIG.BASE_IMAGE_URL + pictureId}" alt="Restaurant ${name}">
+            <img src="${CONFIG.BASE_IMAGE_URL + pictureId}"
+                alt="Restaurant ${name}">
             <div class="rating">
               <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
@@ -62,11 +91,11 @@ class ContentDetailComponent extends LitElement {
         <div class="card flex-column">
           <h2 class="menu-header">Daftar Makanan</h2>
           <div class="list-menu mb-2">
-            ${menus.foods.map((food) => html`<div class="menu">${food.name}</div>` )}
-          </div>
-          <h2 class="menu-header">Daftar Minuman</h2>
-          <div class="list-menu">
-          ${menus.drinks.map((drink) => html`<div class="menu">${drink.name}</div>` )}
+            ${renderMenu(menus.foods)}
+            </div>
+            <h2 class="menu-header">Daftar Minuman</h2>
+            <div class="list-menu">
+            ${renderMenu(menus.drinks)}
           </div>
         </div>
 
@@ -74,18 +103,7 @@ class ContentDetailComponent extends LitElement {
           <h2 class="menu-header">Review</h2>
           <div class="list-review">
             <div class="review">
-              ${customerReviews.map((review) =>
-                 html`
-                  <div class="review-name">
-                    <div class="avatar">${review.name.substring(0, 1)}</div>
-                    <span><strong>${review.name}</strong></span>
-                  </div>
-                  <div class="review-content">
-                    <p>${review.review}</p>
-                    <span>${review.date}</span>
-                  </div>
-                 `
-              )}
+              ${renderCustomerReviews(customerReviews)}
             </div>
           </div>
         </div>

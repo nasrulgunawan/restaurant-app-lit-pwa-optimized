@@ -1,15 +1,19 @@
-import { LitElement, html } from 'lit-element';
-import { mainStyle } from './style';
-import { sharedStyle } from '../../shared/style';
+import {LitElement, html} from 'lit-element';
+import {mainStyle} from './style';
+import {sharedStyle} from '../../shared/style';
 import '../card/card';
 import emptyImage from './empty-data.svg';
+
+function renderRestaurantCards(restaurants) {
+  return restaurants.map((restaurant) => html`<x-card restaurant='${JSON.stringify(restaurant)}'></x-card>`);
+}
 
 class ContentComponent extends LitElement {
   static get properties() {
     return {
-      title: { type: String },
-      subtitle: { type: String },
-      restaurants: { type: Array },
+      title: {type: String},
+      subtitle: {type: String},
+      restaurants: {type: Array},
     };
   }
 
@@ -39,17 +43,13 @@ class ContentComponent extends LitElement {
           </div>
   
           <div class="cards">
-            ${this.restaurants.map((restaurant) => {
-              return html`
-                <x-card restaurant='${JSON.stringify(restaurant)}'></x-card>
-              `;
-            })}
+            ${renderRestaurantCards(this.restaurants)}
           </div>
         </div>
       `;
     } else {
       this._displayHero('none');
-      
+
       return html`
         <div class="empty-data">
           <img src="${emptyImage}" alt="Empty Data Image">

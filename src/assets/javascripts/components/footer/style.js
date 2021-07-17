@@ -1,4 +1,4 @@
-import { css } from 'lit-element';
+import {css} from 'lit-element';
 
 export const footerStyle = css`
   footer {
@@ -6,5 +6,4 @@ export const footerStyle = css`
     background-color: #fff;
     margin-top: 2rem;
     border-top: 1px solid rgba(0, 0, 0, .025);
-  }
-`;
+  }`;

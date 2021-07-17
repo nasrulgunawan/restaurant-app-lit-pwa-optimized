@@ -1,13 +1,14 @@
 
-import { LitElement, html } from 'lit-element';
-import { heroStyle } from './style';
+
+import {LitElement, html} from 'lit-element';
+import {heroStyle} from './style';
 import heroImage from './hero.jpg';
 
 class HeroComponent extends LitElement {
   static get properties() {
     return {
-      heading: { type: String },
-      tagline: { type: String },
+      heading: {type: String},
+      tagline: {type: String},
     };
   }
 

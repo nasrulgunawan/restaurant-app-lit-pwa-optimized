@@ -1,11 +1,11 @@
-import { LitElement, html } from 'lit-element';
-import { sharedStyle } from '../../shared/style';
-import { footerStyle } from './style';
+import {LitElement, html} from 'lit-element';
+import {sharedStyle} from '../../shared/style';
+import {footerStyle} from './style';
 
 class FooterComponent extends LitElement {
   static get properties() {
     return {
-      content: { type: String },
+      content: {type: String},
     };
   }
 
