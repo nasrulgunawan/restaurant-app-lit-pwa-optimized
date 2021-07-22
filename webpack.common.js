@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const path = require('path');
 
@@ -42,6 +43,21 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+        },
+      ],
+    }),
+    new WebpackPwaManifest({
+      name: 'Mamamyu',
+      short_name: 'Mamamyu',
+      description: 'Find your favorite restaurant on Mamamyu',
+      background_color: '#ffffff',
+      display: 'standalone',
+      theme_color: '#fa942a',
+      icons: [
+        {
+          src: path.resolve('src/public/icon.png'),
+          sizes: [72, 96, 128, 144, 152, 192, 256, 384, 512],
+          purpose: 'any maskable',
         },
       ],
     }),
