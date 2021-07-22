@@ -1,12 +1,10 @@
 const NotificationHelper = {
   sendNotification({title, options}) {
     if (!this._checkAvailability()) {
-      console.log('Notification not supported in this browser');
       return;
     }
 
     if (!this._checkPermission()) {
-      console.log('User did not yet granted permission');
       this._requestPermission();
       return;
     }
