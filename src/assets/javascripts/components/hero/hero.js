@@ -2,7 +2,6 @@
 
 import {LitElement, html} from 'lit-element';
 import {heroStyle} from './style';
-import heroImage from './hero.jpg';
 
 class HeroComponent extends LitElement {
   static get properties() {
@@ -27,7 +26,14 @@ class HeroComponent extends LitElement {
   render() {
     return html`
     <section class="hero">
-      <img src="${heroImage}" loading="lazy" alt="Hero Image">
+      <picture>
+          <source media="(max-width: 600px)"
+            srcset="./images/hero-small.webp">
+
+          <img 
+            src='./images/hero-large.webp' 
+            alt="Hero"></img>
+      </picture>
       <div class="hero-container">
         <h1 class="hero-heading">${this.heading}</h1>
         <p class="hero-tagline">${this.tagline}</p>

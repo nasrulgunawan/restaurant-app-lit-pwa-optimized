@@ -1,7 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+
 const path = require('path');
 
 module.exports = {
@@ -34,6 +38,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/views/index.html'),
       filename: 'index.html',
@@ -43,7 +48,19 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+          globOptions: {
+            ignore: ['**/images/**'],
+          },
         },
+      ],
+    }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        // eslint-disable-next-line new-cap
+        ImageminMozjpeg({
+          quality: 80,
+          progressive: true,
+        }),
       ],
     }),
     new WebpackPwaManifest({

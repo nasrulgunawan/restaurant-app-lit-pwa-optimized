@@ -9,6 +9,11 @@ export const heroStyle = css`
     max-height: 500px;
   }
 
+  .hero picture {
+    width: 100%;
+    height: 380px;
+  }
+
   .hero img {
     width: 100%;
     height: 380px;
