@@ -109,7 +109,7 @@ export const cardStyle = css`
     height: 1.5rem;
   }
 
-  .icon-favorite {
+  .icon-favorite, .icon-unfavorite {
     color: #CD113B;
   }
   
