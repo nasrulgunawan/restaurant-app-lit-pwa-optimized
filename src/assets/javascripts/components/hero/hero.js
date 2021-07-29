@@ -32,7 +32,7 @@ class HeroComponent extends LitElement {
 
           <img 
             src='./images/hero-large.webp' 
-            alt="Hero"></img>
+            alt="Hero" loading="lazy"></img>
       </picture>
       <div class="hero-container">
         <h1 class="hero-heading">${this.heading}</h1>

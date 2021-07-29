@@ -26,7 +26,7 @@ class NavbarComponent extends LitElement {
     return html`
       <nav class="navbar">
         <a class="navbar-brand" href="#/">
-          <img alt="Mamamyu Logo" width="75%" src="${logo}">
+          <img alt="Mamamyu Logo" width="75%" src="${logo}" loading="lazy">
         </a>
         <button class="navbar-toggler"
                 type="button"

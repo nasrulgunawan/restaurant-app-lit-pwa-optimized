@@ -52,7 +52,7 @@ class ContentComponent extends LitElement {
 
       return html`
         <div class="empty-data">
-          <img src="${emptyImage}" alt="Empty Data Image">
+          <img src="${emptyImage}" alt="Empty Data Image" loading="lazy">
           <p>Data tidak tersedia</p>
         </div>;
       `;
