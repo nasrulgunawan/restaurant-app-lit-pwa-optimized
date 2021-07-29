@@ -4,6 +4,8 @@ import CONFIG from '../../globals/config';
 import favoriteRestaurantIdb from '../../repository/favorite-restaurant-idb';
 import setFavoriteData from '../../utils/set-favorite-data';
 import {cardStyle} from './style';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 function favoriteIcon() {
   return html`

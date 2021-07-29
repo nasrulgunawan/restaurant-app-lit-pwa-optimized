@@ -4,8 +4,6 @@ import './components/navbar/navbar';
 import './components/hero/hero';
 import './components/content/content';
 import './components/footer/footer';
-import 'lazysizes';
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 import App from './views/app';
 import swRegister from './utils/sw-register';
